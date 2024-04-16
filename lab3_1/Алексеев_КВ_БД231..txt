@@ -1,0 +1,31 @@
+hdfs dfs -help
+hdfs dfs -ls /
+hdfs dfs -mkdir /user/mgpu
+hdfs dfs -mkdir /user/mgpu/alexeev
+base64 /dev/urandom | head -c 10000000 > alexeev.txt
+gzip -c alexeev.txt > alexeev.gz
+hdfs dfs -copyFromLocal alexeev.txt /user/mgpu/alexeev
+hdfs dfs -copyFromLocal alexeev.gz /user/mgpu/alexeev
+cat alexeev.txt
+cat -n alexeev.txt
+cat -b alexeev.txt
+head  alexeev.txt
+head -c alexeev.txt
+head -n alexeev.txt
+tail alexeev.txt
+tail -c 7 alexeev.txt
+tail -n 7 alexeev.txt
+cp alexeev.txt 15.04.2024_alexeev.txt
+hdfs dfs -cp /user/mgpu/alexeev/alexeev.txt /user/mgpu/alexeev/27.03.2024_alexeev.txt
+hdfs dfs -ls /user/mgpu/alexeev/
+hdfs dfs -ls /user/mgpu/alexeev
+hdfs dfs -rm -R /user/mgpu/alexeev
+base64 /dev/urandom | head -c 135000000 > 3.1.12__alexeev_SV.txt
+hdfs dfs -copyFromLocal 3.1.12__alexeev_SV.txt /user/mgpu/alexeev
+yarn jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar wordcount /user/mgpu/alexeev/3.1.12__alexeev_SV.txt /user/mgpu/alexeev/output
+wget https://github.com/BosenkoTM/cloudera-quickstart/blob/main/data/athlete.snappy.parquet
+unzip babs_open_data_year_1.zip 
+
+
+
+
